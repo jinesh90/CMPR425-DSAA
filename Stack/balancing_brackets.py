@@ -1,44 +1,35 @@
-from Coding.stack.stack import Stack
+from stack import Stack
 
 
-def is_matched(ch1, ch2):
-    if ch1 == "{" and ch2 == "}":
-        return True
-    elif ch1 == "(" and ch2 == ")":
-        return True
-    elif ch1 == "[" and ch2 == "]":
-        return True
-    else:
-        return False
+def is_balanced_string(st):
+    """
+    check string is balanced or not
+    :param st:
+    :return: boolean
+    """
+    left_param = "({["
+    right_params = ")}]"
 
-
-def is_balanced_string(string):
-    string_index = 0
-    is_balanced = True
     s = Stack()
-    while string_index != len(string) and is_balanced:
-        if string[string_index] in "[{(":
-            s.push(string[string_index])
-        else:
+
+    for c in st:
+        if c in left_param:
+            s.push(c)
+        elif c in right_params:
             if s.is_empty():
-                is_balanced = False
-            else:
-                top = s.pop()
-                if not is_matched(top,string[string_index]):
-                    is_balanced  = False
-        string_index += 1
-    if s.is_empty() and is_balanced:
-        return True
-    else:
-        return False
-
-
-
+                return False
+            rc = s.pop()
+            if left_param.index(rc) != right_params.index(c):
+                return False
+    return s.is_empty()
 
 
 print("String : (((({}))))] Balanced or not?")
-print(is_balanced_string("(((({}))))"))
+print(is_balanced_string("(((({}))))]"))
 
+
+print("String : {1+[2*(3/4)-1]+2} Balanced or not?")
+print(is_balanced_string("{1+[2*(3/4)-1]+2}"))
 
 
 
