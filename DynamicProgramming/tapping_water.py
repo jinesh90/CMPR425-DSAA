@@ -19,10 +19,10 @@ def find_tapping_water(height):
         right_max[j] = max(height[j], right_max[j+1])
 
     for k in range(1, len(height)):
-        ans += min(left_max[k],right_max[k]) - height[k]
+        ans += min(left_max[k], right_max[k]) - height[k]
     return ans
 
 
-print(find_tapping_water([0,1,0,2,1,0,1,3,2,1,2,1]))
+print(find_tapping_water([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
 
 

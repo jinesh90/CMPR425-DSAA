@@ -5,7 +5,7 @@ brute force method
 
 def find_tapping_water(a):
     ans = 0
-    for i in range(0,len(a)):
+    for i in range(0, len(a)):
         left_max = 0
         right_max = 0
         for j in range(i, -1, -1):
