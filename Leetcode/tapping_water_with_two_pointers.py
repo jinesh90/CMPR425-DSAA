@@ -4,25 +4,25 @@ two pointer method
 """
 
 
-def find_tapping_water(a):
+def find_tapping_water(height):
     ans = 0
     i = 0
-    j = len(a) - 1
+    j = len(height) - 1
     left_max = 0
     right_max = 0
 
     while i < j:
-        if a[i] < a[j]:
-            if a[i] >= left_max:
-                left_max = a[i]
+        if height[i] < height[j]:
+            if height[i] >= left_max:
+                left_max = height[i]
             else:
-                ans += left_max - a[i]
+                ans += left_max - height[i]
             i += 1
         else:
-            if a[j] >= right_max:
-                right_max = a[j]
+            if height[j] >= right_max:
+                right_max = height[j]
             else:
-                ans += right_max - a[j]
+                ans += right_max - height[j]
             j -= 1
     return ans
 
