@@ -26,6 +26,7 @@ leetcode problem # 3 find longest substring.
 #             if char_repeat(s, i, j):
 #                 max_len = max(max_len, j-i+1)
 #     return max_len
+
 def find_longest_brute_force(s):
     def check(start, end):
         chars = [0] * 128
@@ -35,10 +36,7 @@ def find_longest_brute_force(s):
             if chars[ord(c)] > 1:
                 return False
         return True
-
-
     n = len(s)
-
     res = 0
     for i in range(n):
         for j in range(i, n):
@@ -47,5 +45,5 @@ def find_longest_brute_force(s):
     return res
 
 
-s = "abcabcbb"
+s = "abcabcbbafghai"
 print(find_longest_brute_force(s))
