@@ -67,6 +67,7 @@ class Hash:
     def __len__(self):
         return self._size
 
+
 if __name__ == '__main__':
     h = Hash(10)
     h.insert(23)
