@@ -8,7 +8,7 @@ import pymongo
 import requests
 
 
-API_KEYS = "7694721e074040b32ff76b8b43f84f7e"
+API_KEYS = ""
 
 
 def _get_movie_data_from_imdb_ids():
