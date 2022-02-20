@@ -22,4 +22,4 @@ def find_longest_brute_force(s):
 
 
 s = "abcabcbbafghai"
-print(find_longest_brute_force(s))
+print(find_longest_brute_force(s) == 5)
