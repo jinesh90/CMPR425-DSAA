@@ -48,4 +48,4 @@ def optimal_solution(nums, k):
         d[total_sum] = d.get(total_sum, 0) + 1
     return count
 
-print(optimal_solution([3,4,7,2,-3,1,4,2],7))
+print(brute_force([3,4,7,2,-3,1,4,2],7))
